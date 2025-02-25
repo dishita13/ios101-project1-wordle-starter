@@ -10,17 +10,17 @@ Time spent: **3** hours spent in total
 
 The following **required** functionality is completed:
 
-- [ ] App displays a keyboard on the screen
-- [ ] When tapping on the keyboard, a letter is shown or deleted (letter selected)
-- [ ] User can play a basic version of Wordle, with different goal words each time
+- [x] App displays a keyboard on the screen
+- [x] When tapping on the keyboard, a letter is shown or deleted (letter selected)
+- [x] User can play a basic version of Wordle, with different goal words each time
 
 The following **optional** features are implemented:
 
-- [ ] Improve and customize the user interface by adding the Wordle app icon when opening the app
+- [x] Improve and customize the user interface by adding the Wordle app icon when opening the app
 
 ## Video Walkthrough
 
-![WordleDemo](https://github.com/user-attachments/assets/1d0cfd5d-f060-4f15-8a6f-4b85393343ed)
+![WordleDemo](https://github.com/user-attachments/assets/193da4a8-88dd-45b9-80d1-d5e133af0afb)
 
 ## Notes
 
