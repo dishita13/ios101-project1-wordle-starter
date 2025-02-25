@@ -7,10 +7,11 @@
 
 import UIKit
 
-class KeyboardController: NSObject,
-                          UICollectionViewDataSource,
-                          UICollectionViewDelegate,
-                          UICollectionViewDelegateFlowLayout {
+//subclass: parent class1, protocol1, protocol2, protocol3
+class KeyboardController: NSObject, //rootclass of most Objective C class
+                          UICollectionViewDataSource, //provide data to grid
+                          UICollectionViewDelegate,   //what user does (taps)
+                          UICollectionViewDelegateFlowLayout { //spacing/sizing
 
   private let keyboardRows: [[String]] = [
     ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
@@ -30,7 +31,7 @@ class KeyboardController: NSObject,
     // Exercise 1: Return the correct number of items in a section
     // Tip: There's a helper method you can use located in this class
     // START YOUR CODE HERE
-    return 0
+      return numItems(in: section)
     // END YOUR CODE HERE
   }
 
@@ -38,11 +39,13 @@ class KeyboardController: NSObject,
                       cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "KeyboardCell",
                                                   for: indexPath) as! KeyboardCell
-    cell.configure(with: keyboardRows[indexPath.section][indexPath.row])
+    let key = keyboardRows[indexPath.section][indexPath.row]
+    cell.configure(with: key)
     // Exercise 4: Pass in the `didSelectString` closure to the KeyboardCell's corresponding property
     // START YOUR CODE HERE
-    // ...
+      cell.didSelectString = { [weak self] selectedString in self?.didSelectString?(selectedString)}
     // END YOUR CODE HERE
+
     return cell
   }
 
